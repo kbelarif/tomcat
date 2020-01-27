@@ -6,7 +6,6 @@
 	<persistence-unit name="contacts" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<non-jta-data-source>java:comp/env/jdbc/contacts</non-jta-data-source>
-		<class>livres.entities.Livre</class>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
 			<property name="javax.persistence.schema-generation.database.action" value="none" />

@@ -7,10 +7,18 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="personnes")
+
+@NamedQuery(name = "Contact.getByNom",
+			query = "SELECT c FROM Contact c WHERE c.nom LIKE :nom")
+@NamedQuery(name= "Contact.getAll", 
+			query = "SELECT c FROM Contact c")
+
 public class Contact {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="pk")

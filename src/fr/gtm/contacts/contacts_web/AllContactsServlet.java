@@ -26,7 +26,7 @@ public class AllContactsServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ContactDao dao = (ContactDao) getServletContext().getAttribute("contactDao");
-		String page ="show-contacts.jsp";
+		String page ="/show-contacts.jsp";
 		List<Contact> contacts = dao.getAllContact();
 		request.setAttribute("contact", contacts);
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(page);

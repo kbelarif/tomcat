@@ -15,9 +15,7 @@ import fr.gtm.contacts.dao.ContactDao;
 public class ApplicationListener implements ServletContextListener {
 	private static Logger LOG =Logger.getLogger(ApplicationListener.class.getName()); 
 
-    public ApplicationListener() {
-        
-    }
+    public ApplicationListener(){}
 
     public void contextDestroyed(ServletContextEvent sce)  { 
     	LOG.info(">>>>> arrêt de l'application");

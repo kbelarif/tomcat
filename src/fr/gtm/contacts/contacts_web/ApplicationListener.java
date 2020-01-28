@@ -10,6 +10,7 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
 import fr.gtm.contacts.dao.ContactDao;
+import fr.gtm.contacts.service.ContactService;
 
 @WebListener
 public class ApplicationListener implements ServletContextListener {
@@ -32,6 +33,9 @@ public class ApplicationListener implements ServletContextListener {
          EntityManagerFactory emf = Persistence.createEntityManagerFactory("contacts");
          application.setAttribute("EMF", emf);
          ContactDao contactDao = new ContactDao(emf);
-         application.setAttribute("contactDao", contactDao);
+         //application.setAttribute("contactDao", contactDao);
+         ContactService contactservice =new ContactService(contactDao);
+         application.setAttribute("contactservice", contactservice);
+         
     }	
 }

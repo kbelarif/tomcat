@@ -12,12 +12,10 @@
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<h2>Liste des contacts</h2>
+		<h2>Liste des Adresses</h2>
 		<ul>
-			<c:forEach items="${contacts}" var="contact">	
-				<li> ${contact.civilite} ${contact.prenom} ${contact.nom}
-				<a href="AfficherAdresseContactServlet?id=${contact.id }">adresses</a>
-				</li>
+			<c:forEach items="${adresses}" var="adresse">	
+				<li> ${adresse.rue} ${adresse.ville} ${adresse.code_postal} ${adresse.pays}</li>
 			</c:forEach>
 		</ul>
 	</body>

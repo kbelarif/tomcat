@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
+import fr.gtm.contacts.entities.Adresse;
 import fr.gtm.contacts.entities.Civilite;
 import fr.gtm.contacts.entities.Contact;
 
@@ -43,4 +44,13 @@ public class ContactDao extends AbstractDao<Contact,Long>{
 		em.close();
 		return contacts;
 	}
+	
+	public List<Adresse> getAdresses(long idContact){
+		EntityManager em = emf.createEntityManager();
+		Contact contact = em.find(Contact.class, idContact);
+		contact.getAdresses().size(); // Permet de charger les éléments de contact.getAdresse en mémoire
+		em.close();
+		return contact.getAdresses();
+	}
+
 }

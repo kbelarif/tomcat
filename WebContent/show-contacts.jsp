@@ -17,6 +17,8 @@
 			<c:forEach items="${contacts}" var="contact">	
 				<li> ${contact.civilite} ${contact.prenom} ${contact.nom}
 				<a href="AfficherAdresseContactServlet?id=${contact.id }">adresses</a>
+				<a href="ModifierContact?id=${contact.id }">modifier</a>
+				<a href="SupprimerContact?id=${contact.id }">supprimer</a>
 				</li>
 			</c:forEach>
 		</ul>

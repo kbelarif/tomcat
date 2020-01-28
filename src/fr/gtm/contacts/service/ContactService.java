@@ -33,5 +33,20 @@ public class ContactService {
 		}
 		return dtos;
 	}
+
+	public void updateContact(Contact c) {
+			Contact contact = new Contact();
+			contact.setCivilite(c.getCivilite());
+			contact.setId(c.getId());
+			contact.setNom(c.getNom());
+			contact.setPrenom(c.getPrenom());
+			contactDao.update(contact);	
+	}
+
+	public void remove(ContactDto c) {
+		contactDao.remove(c.getId());
+		
+		
+	}
 	
 }

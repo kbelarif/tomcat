@@ -36,6 +36,5 @@ public class ApplicationListener implements ServletContextListener {
          //application.setAttribute("contactDao", contactDao);
          ContactService contactservice =new ContactService(contactDao);
          application.setAttribute("contactservice", contactservice);
-         
     }	
 }

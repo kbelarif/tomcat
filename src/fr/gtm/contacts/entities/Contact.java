@@ -36,7 +36,7 @@ public class Contact {
 	@ManyToMany//(fetch = FetchType.EAGER)
 	@JoinTable(name ="contacts_adresses", joinColumns= @JoinColumn(name ="fk_personne"),
 			inverseJoinColumns = @JoinColumn(name = "fk_adresse"))
-	public List<Adresse> adresses;
+	private List<Adresse> adresses;
 	
 	public Contact() {
 	}
